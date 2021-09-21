@@ -54,11 +54,7 @@ export default async (req, res) => {
         note: Validator.string().optional(),
       })
       .required(),
-    return_shipping: Validator.object()
-      .keys({
-        option_id: Validator.string().optional(),
-      })
-      .optional(),
+    return_shipping_option: Validator.string().optional(),
   })
 
   const { value, error } = schema.validate(req.body)
